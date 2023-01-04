@@ -1,7 +1,11 @@
 import React from "react";
 
 const MenuItem = (props) => {
-  return <li>{props.name}</li>;
+  return (
+    <a className="NavItem" href="#">
+      {props.name}
+    </a>
+  );
 };
 
 export default MenuItem;

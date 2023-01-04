@@ -1,10 +1,11 @@
 import React from "react";
+import "./style.css";
 
 const Logo = () => {
   return (
-    <div>
-      <img src="/images/Leap.png" alt="logo" />
-      <img src="/images/hire.png" alt="logo" />
+    <div className="LeftSection">
+      <img className="Logo" src="/images/Leap.png" alt="logo" />
+      <img className="HireMe" src="/images/hire.png" alt="logo" />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import MenuItem from "../MenuItem";
+import "./styles.css";
 
 const menus = [
   "Portfolio",
@@ -12,12 +13,10 @@ const menus = [
 ];
 const Menu = () => {
   return (
-    <div>
-      <ul>
-        {menus.map((menu) => (
-          <MenuItem name={menu} />
-        ))}
-      </ul>
+    <div className="NavMenu">
+      {menus.map((menu) => (
+        <MenuItem key={menu} name={menu} />
+      ))}
     </div>
   );
 };

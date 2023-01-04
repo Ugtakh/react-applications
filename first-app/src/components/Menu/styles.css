@@ -1,0 +1,18 @@
+.NavMenu {
+  display: flex;
+  gap: 30px;
+}
+.NavItem {
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #424242;
+  transition: all 0.1s;
+}
+.NavItem:hover {
+  font-weight: bold;
+  color: blueviolet;
+}

@@ -1,9 +1,10 @@
 import Logo from "../Logo";
 import Menu from "../Menu";
+import "./style.css";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="Navbar">
       <Logo />
       <Menu />
     </div>

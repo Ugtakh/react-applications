@@ -2,6 +2,7 @@ const Btn = (props) => {
   const handleClick = (name) => {
     alert("Hello-" + name);
   };
+
   return (
     <button
       className={props.classNer}

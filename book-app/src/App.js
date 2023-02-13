@@ -5,13 +5,12 @@ import Home from "./pages/Home";
 import BookList from "./pages/BookList";
 import BookDetail from "./pages/BookDetail";
 import { books } from "./data";
-import { UserContext } from "./context";
+import UserProvider, { UserContext } from "./context";
 
 import { createTheme, ThemeProvider } from "@mui/material";
 import Timer from "./pages/Timer";
 
 function App() {
-  const [userName, setUserName] = useState("Naraa");
   // const [isDark, setIsDark] = useState(false);
 
   // const theme = createTheme({
@@ -42,16 +41,14 @@ function App() {
   // };
 
   return (
-    <UserContext.Provider value={{ userName, setUserName }}>
+    <UserProvider>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/books" element={<BookList books={books} />} />
-
         <Route path="/books/:id" element={<BookDetail books={books} />} />
-
         <Route path="/timer" element={<Timer />} />
       </Routes>
-    </UserContext.Provider>
+    </UserProvider>
   );
 }
 

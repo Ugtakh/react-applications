@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Container,
   Box,
@@ -16,9 +16,11 @@ import {
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { login } = useContext(UserContext);
 
   const [open, setOpen] = useState(false);
   const [error, setError] = useState("");
@@ -47,19 +49,7 @@ const Home = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(user);
-    // try {
-    //   const res = await axios.post("http://localhost:8000/signin", {
-    //     id: "cda61c43-37b6-4971-ab05-cbef0f91f172",
-    //     ...user,
-    //   });
-    //   console.log("RES", res);
-    //   localStorage.setItem("user", JSON.stringify(res.data.user));
-    //   navigate("/books");
-    // } catch (err) {
-    //   console.log("err", err);
-    //   setError(err.response.data.message);
-    //   handleOpen();
-    // }
+    login(user.email, user.password);
   };
 
   return (
